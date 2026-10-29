@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: dealership-capstone
+    runtime: python
+    buildCommand: pip install -r requirements.txt && python manage.py migrate
+    startCommand: gunicorn dealership.wsgi:application
